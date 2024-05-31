@@ -40,3 +40,26 @@ func ReadString () (string) {
 	data = strings.TrimSpace(data)
 	return data
 }
+
+func ReadInts () ([]int) {
+	var result []int
+	str := ReadString()
+	parts := strings.Split(str, " ");
+	for _, value := range parts {
+		number, err := strconv.ParseInt(value, 10, 0)
+		if err != nil {
+			continue
+		}
+		result = append(result, int(number))
+	}
+	return result
+}
+
+func ReadIntsWithCount(count int) ([]int) {
+	ints := ReadInts();
+	for len(ints) != count{
+		fmt.Println("Вы ввели некорректные данные, проверьте количество и корректность чисел и попробуйте еще раз:")
+		ints = ReadInts()
+	}
+	return ints
+}
