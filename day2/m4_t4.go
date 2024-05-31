@@ -12,3 +12,24 @@
     1 0 1 0 1
     0 1 0 1 0
 */
+package main
+
+import (
+    "example.com/readers"
+    "fmt"
+)
+
+func main() {
+    fmt.Println("Укажите размер доски")
+    size := readers.ReadIntMinMax(0, 20)
+    printDesk(size)
+}
+
+func printDesk(size int){
+    for i:=0; i < size; i++ {
+        for j:=0; j< size; j++ {
+            fmt.Printf("%d ",(i + j) % 2)
+        }
+        fmt.Println()
+    }
+}
