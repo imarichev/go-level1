@@ -21,5 +21,5 @@ import (
 
 func main() {
 	number := readers.ReadIntMinMax(0, 200)
-	bottles.Humanize(i)
+	bottles.Humanize(number)
 }
