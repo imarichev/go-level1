@@ -59,7 +59,7 @@ func main() {
 		password = readers.ReadString()
 		err = checkPass(password)
 	}
-	if count > 4 {
+	if err != nil {
 		log.Fatal("Условия не выполнены, и у вас больше не осталось попыток!")
 	} else {
 		fmt.Println("Пароль принят, спасибо!")
